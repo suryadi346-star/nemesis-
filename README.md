@@ -46,3 +46,48 @@ The backend expects the database at `backend/data/dashboard.sqlite`.
 
 ### 2. Run the Application
 
+**1. Start the backend**
+
+```bash
+cd backend
+npm start
+```
+
+The backend runs on `http://127.0.0.1:3000`.
+
+**2. Serve the frontend** (in a second terminal)
+
+```bash
+cd frontend
+python3 -m http.server 8080
+```
+
+Then open `http://127.0.0.1:8080` in your browser.
+
+The frontend is preconfigured to call the backend at `http://127.0.0.1:3000/api`.
+
+## Notes
+
+- No frontend build step required — plain HTML/CSS/JS.
+- If `backend/node_modules` is missing, install dependencies:
+```bash
+  cd backend
+  npm install
+```
+- For development mode with hot reload:
+```bash
+  cd backend
+  npm run dev
+```
+
+## Environment
+
+Backend config is loaded from `backend/.env`. Default values:
+
+```env
+PORT=3000
+CORS_ORIGIN=*
+SQLITE_PATH=data/dashboard.sqlite
+AUDIT_DATASET_DIR=dataset
+GEO_ROOT_PATH=seed/geo
+```
