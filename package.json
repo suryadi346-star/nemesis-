@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "NODE_ENV=development node worker.js",
-    "start": "node worker.js",
+    "start": "NODE_ENV=production node worker.js",
     "build": "vite build",
     "db:reset": "node scripts/reset-db.js",
     "db:export": "node scripts/export-db.js",
