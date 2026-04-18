@@ -69,6 +69,8 @@ npm run dev
 The unified orchestrated server will boot automatically. Open your browser to the local URL explicitly printed in your terminal (usually `http://127.0.0.1:$PORT`).
 
 ## Notes
+- **Cross-Platform:** The overarching terminal commands utilize `cross-env` internally. You can confidently run `npm run dev` and `npm run start` natively on Linux, macOS, or Windows without breaking environment pipelines.
+- **Enterprise Logging:** Node automatically writes rotating, highly-compressed (`gzip`) daily Apache logs to the `/logs` directory to safely prevent disk blowout under heavy traffic conditions.
 - There is no manual frontend build step required during development. Vite cleanly orchestrates HMR under the hood.
 - To physically compile a final production bundle and boot it, run `npm run build` followed by `npm run start`.
 

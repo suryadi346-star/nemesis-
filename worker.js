@@ -27,32 +27,36 @@ async function startServer() {
 
   // Filename generator for daily rotation: prefix-dd-mm-yyyy.log
   const createLogFilename = (prefix) => (time, index) => {
-    if (!time) return `${prefix}.log`;
-    const d = String(time.getDate()).padStart(2, '0');
-    const m = String(time.getMonth() + 1).padStart(2, '0');
-    const y = time.getFullYear();
+    const t = time || new Date();
+    const d = String(t.getDate()).padStart(2, '0');
+    const m = String(t.getMonth() + 1).padStart(2, '0');
+    const y = t.getFullYear();
     const idx = index > 1 ? `-${index}` : '';
     return `${prefix}-${d}-${m}-${y}${idx}.log`;
   };
 
-  // Create daily rotating write streams
+  // Create daily rotating write streams with GZIP compression
   const accessLogStream = createStream(createLogFilename('access'), {
     interval: '1d', // rotate daily
+    size: '100M', // also rotate if file exceeds 100MB
     path: logDirectory,
-    maxFiles: 30 // Keep 30 days of logs
+    compress: 'gzip', // natively gzip archives (~90% compression)
+    maxFiles: 14 // standard 2 weeks retention for access logs
   });
 
   const errorLogStream = createStream(createLogFilename('error'), {
     interval: '1d',
+    size: '20M',
     path: logDirectory,
-    maxFiles: 30
+    compress: 'gzip',
+    maxFiles: 30 // keep silent errors longer for debugging
   });
 
-  // Log all requests to access stream
-  app.use(morgan('combined', { stream: accessLogStream }));
+  // Use 'short' format to drastically save horizontal log size without losing crucial endpoint info
+  app.use(morgan('short', { stream: accessLogStream }));
 
   // Log only errors (status >= 400) to error stream
-  app.use(morgan('combined', {
+  app.use(morgan('short', {
     stream: errorLogStream,
     skip: (req, res) => res.statusCode < 400
   }));
