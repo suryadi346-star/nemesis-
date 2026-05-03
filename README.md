@@ -98,48 +98,6 @@ cp .env.example .env
 
 ---
 
-## 📋 Daftar Isi
-
-- [Fitur](#-fitur)
-- [Prasyarat](#-prasyarat)
-- [Instalasi](#-instalasi)
-- [Konfigurasi](#-konfigurasi)
-- [Penggunaan](#-penggunaan)
-- [Struktur Proyek](#-struktur-proyek)
-- [API Endpoints](#-api-endpoints)
-- [Development](#-development)
-- [Troubleshooting](#-troubleshooting)
-- [Kontribusi](#-kontribusi)
-- [Lisensi](#-lisensi)
-
----
-
-## ✨ Fitur
-
-- 🐳 **Docker-Ready**: Deployment instan dengan `docker-compose`
-- 💾 **SQLite Embedded**: Database ringan tanpa konfigurasi server eksternal
-- 📁 **Dynamic Dataset**: Kompilasi database otomatis dari folder `dataset/`
-- 🌐 **REST API**: Endpoint terstruktur untuk integrasi frontend/backend
-- 🔐 **CORS Configurable**: Dukungan whitelist domain untuk keamanan produksi
-- 📊 **Geo Support**: Integrasi data geospasial via `seed/geo/`
-- 📝 **Rotating Logs**: Logging terstruktur ke folder `logs/`
-- ♻️ **Auto-Restart**: Container recovery otomatis jika crash
-
----
-
-## 🛠️ Prasyarat
-
-| Software | Versi Minimum | Catatan |
-|----------|--------------|---------|
-| Docker | 20.10+ | [Install Docker](https://docs.docker.com/get-docker/) |
-| Docker Compose | v2.0+ | Sudah termasuk dalam Docker Desktop |
-| Node.js | 18.x (opsional) | Hanya untuk development lokal |
-| Git | 2.30+ | Untuk cloning repository |
-
----
-
-## 🚀 Instalasi
-
 ### 1. Clone Repository
 
 ```bash
