@@ -93,7 +93,7 @@ cp .env.example .env
 > **Audit Dashboard & Data Compilation System** — Platform terpusat untuk mengelola, mengompilasi, dan memvisualisasikan dataset audit dengan dukungan SQLite, Docker, dan API RESTful.
 
 <p align="center">
-  <img src="logo.svg" alt="Nemesis Logo" width="180"/>
+  <img src="src/assets/logo.svg" alt="Nemesis Logo" width="180"/>
 </p>
 
 ---
