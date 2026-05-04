@@ -1,5 +1,18 @@
+
 # Nemesis
-Nemesis is the public-facing investigative interface as the result of Operation Diponegoro, initiated by Abil Sudarman School of Artificial Intelligence. We ingest millions of rows of procurement data, surface anomalies, and make the findings legible to citizens, journalists, and policymakers.
+> **Nemesis** is the public-facing investigative interface as the result of Operation Diponegoro, initiated by **Abil Sudarman** School of Artificial Intelligence. We ingest millions of rows of procurement data, surface anomalies, and make the findings legible to citizens, journalists, and policymakers.
+
+<div align="center">
+  
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+</div>
+
+<p align="center">
+  <img src="src/assets/logo.svg" alt="Nemesis Logo" width="180"/>
+</p>
+
 
 Live dashboard: https://assai.id/nemesis
 
@@ -84,22 +97,4 @@ Copy from example:
 cp .env.example .env
 ```
 
-# ⚡ Nemesis
-
-[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
-
-> **Audit Dashboard & Data Compilation System** — Platform terpusat untuk mengelola, mengompilasi, dan memvisualisasikan dataset audit dengan dukungan SQLite, Docker, dan API RESTful.
-
-<p align="center">
-  <img src="src/assets/logo.svg" alt="Nemesis Logo" width="180"/>
-</p>
-
 ---
-
-### 1. Clone Repository
-
-```bash
-git clone git@github.com:suryadi346-star/nemesis.git
-cd nemesis
